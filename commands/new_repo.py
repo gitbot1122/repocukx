@@ -117,6 +117,8 @@ Lütfen repo adı giriniz: ''')
             repoName = input(r"repo adını yazınız: ")
             os.system(f"git remote add origin https://github.com/{GithubLogin.user.userName}/{repoName}.git")
             time.sleep(2)
+            print("branch adınız aşağıda yazmaktadır! ")
+            os.system("git branch")
             branchName=input(r'''
 örnek: main         
 Branch adını giriniz
