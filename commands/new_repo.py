@@ -110,24 +110,30 @@ Lütfen repo adı giriniz: ''')
             os.chdir(filePath)
             time.sleep(2)
             os.system(f'git config --global user.email "{GithubLogin.user.email}"')
+
             time.sleep(2)
             os.system(f'git config --global user.name "{GithubLogin.user.userName}"')
+
             time.sleep(2)
             os.system("git add .")
+
             time.sleep(2)
             commitmessage=input("commit mesajınızı giriniz: ")
             os.system(f'git commit -m "{commitmessage}')
+
             time.sleep(2)
             repoName = input(r"repo adını yazınız: ")
+
             print("branch adınız aşağıda yazmaktadır! ")
             os.system("git branch")
             branchName=input(r'''         
 Yukarıda verilen branch adını giriniz: ''')
+            
             isLoadingCode=input('''
 ->1-) Kodumu daha önce yükledim güncellemek istiyorum
 ->2-) Kodumu ilk defa yeni bir repoya yüklüyorum''')
             if(isLoadingCode ==1):
-                os.system(f"git push -u origin {branchName} ")
+                os.system(f"git push ")
                 print(f"Dosya içeriği '{GithubLogin.user.userName}' kullanıcı adlı '{repoName}' adlı repoya  yüklendi! ")
             if(isLoadingCode ==2):
                 os.system(f"git remote origin https://github.com/{GithubLogin.user.userName}/{repoName}.git")
