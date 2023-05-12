@@ -114,7 +114,7 @@ Lütfen repo adı giriniz: ''')
         os.system(f'git commit -m "{commitmessage}')
         time.sleep(2)
         repoName = input(r"repo adını yazınız: ")
-        os.system(f"git remote add origin https://github.com/{GithubLogin.user.username}/{repoName}.git")
+        os.system(f"git remote add origin https://github.com/{GithubLogin.user.userName}/{repoName}.git")
         time.sleep(2)
         branchName=input(r'''
 örnek: main         
