@@ -20,6 +20,8 @@ def main():
     if profchoice == "1":
         SendCode()
         main()
+    else:
+        main()
 
 
 

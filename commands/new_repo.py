@@ -121,12 +121,12 @@ Lütfen repo adı giriniz: ''')
 Branch adını giriniz
             ''')
         isLoadingCode=input('''
-->1-) Kodumu daha önce yükledim
-->2-) Kodumu daha önce yükledim güncellemek istiyorum''')
+->1-) Kodumu daha önce yükledim güncellemek istiyorum
+->2-) Kodumu ilk defa yeni bir repoya yüklüyorum''')
         if(isLoadingCode ==1):
             os.system(f"git push -u origin {branchName} ")
             print(f"Dosya içeriği '{GithubLogin.user.userName}' kullanıcı adlı '{repoName}' adlı repoya  yüklendi! ")
-        if(isLoadingCode ==1):
+        if(isLoadingCode ==2):
             os.system(f"git branch  -M {branchName}")
             os.system(f"git push -u origin {branchName} ")
             print(f"Dosya içeriği '{GithubLogin.user.userName}' kullanıcı adlı '{repoName}' adlı repoya  yüklendi! ")
