@@ -7,7 +7,7 @@ from selenium.webdriver.common.keys import Keys
 class GithubLogin():
     isUserActive =False
     from commands.user_info import User
-    user =User("","")
+    user =User("","","")
     try:
         chrome_driver_path="webdriver/chromedriver.exe"
         browser = webdriver.Chrome(chrome_driver_path)
@@ -22,7 +22,8 @@ class GithubLogin():
         try:    
             
             
-            self.username= self.user.userName="gitbotum55" #input("Kullanıcı Adı veya E-Posta: ")
+            self.username= self.user.userName="gitbotum55" #input("Kullanıcı Adı  ")
+            self.email= self.user.email="yakupalt5289@gmail.com" #input("E-mail: ")
             self.password= self.user.password="Gitbotum1" #input("Şifre: ") 
 
             GithubLogin.browser.get(self.baseUrl +"login")

@@ -109,6 +109,10 @@ Lütfen repo adı giriniz: ''')
         try:
             os.chdir(filePath)
             time.sleep(2)
+            os.system(f'git config --global user.email "{GithubLogin.user.email}"')
+            time.sleep(2)
+            os.system(f'git config --global user.name "{GithubLogin.user.userName}"')
+            time.sleep(2)
             os.system("git add .")
             time.sleep(2)
             commitmessage=input("commit mesajınızı giriniz: ")
@@ -119,10 +123,8 @@ Lütfen repo adı giriniz: ''')
             time.sleep(2)
             print("branch adınız aşağıda yazmaktadır! ")
             os.system("git branch")
-            branchName=input(r'''
-örnek: main         
-Branch adını giriniz
-            ''')
+            branchName=input(r'''         
+Yukarıda verilen branch adını giriniz: ''')
             isLoadingCode=input('''
 ->1-) Kodumu daha önce yükledim güncellemek istiyorum
 ->2-) Kodumu ilk defa yeni bir repoya yüklüyorum''')
