@@ -131,12 +131,12 @@ Yukarıda verilen branch adını giriniz: ''')
             
             isLoadingCode=int(input('''
 ->1-) Kodumu daha önce yükledim güncellemek istiyorum
-->2-) Kodumu ilk defa yeni bir repoya yüklüyorum'''))
+->2-) Kodumu ilk defa yeni bir repoya yüklüyorum ya da farklı bir repo üzerinde işlem yapmak istiyorum'''))
             if(isLoadingCode ==1):
                 os.system(f"git push origin master")
                 print(f"Dosya içeriği '{GithubLogin.user.userName}' kullanıcı adlı '{repoName}' adlı repoya  yüklendi! ")
             if(isLoadingCode ==2):
-                os.system(f"git remote origin https://github.com/{GithubLogin.user.userName}/{repoName}.git")
+                os.system(f"git remote add origin https://github.com/{GithubLogin.user.userName}/{repoName}.git")
                 time.sleep(3)
                 os.system(f"git push -u origin {branchName} ")
                 print(f"Dosya içeriği '{GithubLogin.user.userName}' kullanıcı adlı '{repoName}' adlı repoya  yüklendi! ")
