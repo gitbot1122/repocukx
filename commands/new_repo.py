@@ -12,16 +12,16 @@ class SendCode(GithubLogin):
     def _selectionScreen(self):
         try:
             chooseToken = int(input(r'''
-    ->1-) Yeni token anahtarı oluştur
-    ->2-) Zaten token anahtarım var 
-    ->3-) Ana menüye dön '''))
+->1-) Yeni token anahtarı oluştur
+->2-) Zaten token anahtarım var 
+->3-) Ana menüye dön '''))
             
             if(chooseToken == 1):
                 self.createToken()
                 chooseRepo = int(input('''
-    ->1-) Yeni repo  oluştur
-    ->2-) Zaten repom var 
-    ->3-) Ana menüye dön '''))
+->1-) Yeni repo  oluştur
+->2-) Zaten repom var 
+->3-) Ana menüye dön '''))
                 if(chooseRepo == 1):
                     self.createRepo()
                     self.gitPush()
@@ -32,9 +32,9 @@ class SendCode(GithubLogin):
 
             if(chooseToken ==2 ):
                 chooseRepo = int(input(r'''
-    ->1-) Yeni repo  oluştur
-    ->2-) Zaten repom var 
-    ->3-) Ana menüye dön '''))
+->1-) Yeni repo  oluştur
+->2-) Zaten repom var 
+->3-) Ana menüye dön '''))
                 if(chooseRepo == 1):
                     self.createRepo()
                     self.gitPush()
@@ -120,8 +120,17 @@ Lütfen repo adı giriniz: ''')
 örnek: main         
 Branch adını giriniz
             ''')
-        os.system(f"git push -u origin {branchName} ")
-        print("Dosya içeriği github'a yüklendi! ")
+        isLoadingCode=input('''
+->1-) Kodumu daha önce yükledim
+->2-) Kodumu daha önce yükledim güncellemek istiyorum''')
+        if(isLoadingCode ==1):
+            os.system(f"git push -u origin {branchName} ")
+            print(f"Dosya içeriği '{GithubLogin.user.userName}' kullanıcı adlı '{repoName}' adlı repoya  yüklendi! ")
+        if(isLoadingCode ==1):
+            os.system(f"git branch  -M {branchName}")
+            os.system(f"git push -u origin {branchName} ")
+            print(f"Dosya içeriği '{GithubLogin.user.userName}' kullanıcı adlı '{repoName}' adlı repoya  yüklendi! ")
+        
         time.sleep(3)
 
 

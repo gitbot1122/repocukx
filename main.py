@@ -27,6 +27,6 @@ def main():
 if(GithubLogin.isUserActive==False):
     git.singIn()
     main()
-#C:\Users\\yakup\OneDrive\Belgeler\github_bot
+#C:\Users\yakup\OneDrive\Belgeler\github_bot
 
 
