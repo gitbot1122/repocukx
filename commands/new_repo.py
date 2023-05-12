@@ -134,7 +134,7 @@ Yukarıda verilen branch adını giriniz: ''')
 ->2-) Kodumu ilk defa yeni bir repoya yüklüyorum 
 ->3-) Farklı bir repo üzerinde işlem yapmak istiyorum'''))
             if(isLoadingCode ==1):
-                os.system(f"git push origin master")
+                os.system(f"git push origin {branchName}")
                 print(f"Dosya içeriği '{GithubLogin.user.userName}' kullanıcı adlı '{repoName}' adlı repoya  yüklendi! ")
             if(isLoadingCode ==2):
                 os.system(f"git remote add origin https://github.com/{GithubLogin.user.userName}/{repoName}.git")
@@ -142,9 +142,9 @@ Yukarıda verilen branch adını giriniz: ''')
                 os.system(f"git push -u origin {branchName} ")
                 print(f"Dosya içeriği '{GithubLogin.user.userName}' kullanıcı adlı '{repoName}' adlı repoya  yüklendi! ")
             if isLoadingCode == 3:
-                os.system(f"git remote origin https://github.com/{GithubLogin.user.userName}/{repoName}.git")
+                os.system(f"git remote set-url origin https://github.com/{GithubLogin.user.userName}/{repoName}.git")
                 time.sleep(3)
-                os.system(f"git push ")
+                os.system(f"git push -u origin {branchName} ")
                 print(f"Dosya içeriği '{GithubLogin.user.userName}' kullanıcı adlı '{repoName}' adlı repoya  yüklendi! ")
             time.sleep(3)
         except Exception as e:
