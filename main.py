@@ -10,7 +10,7 @@ tc = TerminalCommand()
 
 
 def main():
-    os.system("cls")
+    #os.system("cls")
     os.system("color 9")
     print(f'''
 ->1-) Kod paylaşım  
