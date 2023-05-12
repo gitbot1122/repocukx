@@ -129,6 +129,7 @@ Branch adını giriniz
                 print(f"Dosya içeriği '{GithubLogin.user.userName}' kullanıcı adlı '{repoName}' adlı repoya  yüklendi! ")
             if(isLoadingCode ==2):
                 os.system(f"git branch  -M {branchName}")
+                time.sleep(3)
                 os.system(f"git push -u origin {branchName} ")
                 print(f"Dosya içeriği '{GithubLogin.user.userName}' kullanıcı adlı '{repoName}' adlı repoya  yüklendi! ")
 
