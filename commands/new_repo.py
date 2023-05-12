@@ -106,31 +106,35 @@ Lütfen repo adı giriniz: ''')
             print("bir hata meydana geldi: ",e)
             time.sleep(5)
     def githubcomand(self,filePath):
-        os.chdir(filePath)
-        time.sleep(2)
-        os.system("git add .")
-        time.sleep(2)
-        commitmessage=input("commit mesajınızı giriniz: ")
-        os.system(f'git commit -m "{commitmessage}')
-        time.sleep(2)
-        repoName = input(r"repo adını yazınız: ")
-        os.system(f"git remote add origin https://github.com/{GithubLogin.user.userName}/{repoName}.git")
-        time.sleep(2)
-        branchName=input(r'''
+        try:
+            os.chdir(filePath)
+            time.sleep(2)
+            os.system("git add .")
+            time.sleep(2)
+            commitmessage=input("commit mesajınızı giriniz: ")
+            os.system(f'git commit -m "{commitmessage}')
+            time.sleep(2)
+            repoName = input(r"repo adını yazınız: ")
+            os.system(f"git remote add origin https://github.com/{GithubLogin.user.userName}/{repoName}.git")
+            time.sleep(2)
+            branchName=input(r'''
 örnek: main         
 Branch adını giriniz
             ''')
-        isLoadingCode=input('''
+            isLoadingCode=input('''
 ->1-) Kodumu daha önce yükledim güncellemek istiyorum
 ->2-) Kodumu ilk defa yeni bir repoya yüklüyorum''')
-        if(isLoadingCode ==1):
-            os.system(f"git push -u origin {branchName} ")
-            print(f"Dosya içeriği '{GithubLogin.user.userName}' kullanıcı adlı '{repoName}' adlı repoya  yüklendi! ")
-        if(isLoadingCode ==2):
-            os.system(f"git branch  -M {branchName}")
-            os.system(f"git push -u origin {branchName} ")
-            print(f"Dosya içeriği '{GithubLogin.user.userName}' kullanıcı adlı '{repoName}' adlı repoya  yüklendi! ")
-        
-        time.sleep(3)
+            if(isLoadingCode ==1):
+                os.system(f"git push -u origin {branchName} ")
+                print(f"Dosya içeriği '{GithubLogin.user.userName}' kullanıcı adlı '{repoName}' adlı repoya  yüklendi! ")
+            if(isLoadingCode ==2):
+                os.system(f"git branch  -M {branchName}")
+                os.system(f"git push -u origin {branchName} ")
+                print(f"Dosya içeriği '{GithubLogin.user.userName}' kullanıcı adlı '{repoName}' adlı repoya  yüklendi! ")
+
+            time.sleep(3)
+        except Exception as e:
+            print("bir hata meydan gelidi---->>>",e)
+            time.sleep(5)
 
 
